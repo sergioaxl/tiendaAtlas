@@ -1,11 +1,5 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-var _mongoose = require("mongoose");
-var productoEsquema = new _mongoose.Schema({
+import { Schema, model } from "mongoose";
+var productoEsquema = new Schema({
   nombre: {
     type: String,
     requiered: true,
@@ -28,4 +22,4 @@ var productoEsquema = new _mongoose.Schema({
   timestamps: true,
   versionKey: false
 });
-var _default = exports["default"] = (0, _mongoose.model)("Producto", productoEsquema);
+export default model("Producto", productoEsquema);
