@@ -8,7 +8,9 @@ import { createUsuario, deleteUsuario, renderEditUsuario, renderUsuario, statusU
 
 const router = Router();
 
-router.get("/", renderProductos);
+router.get("/", (req, res) => res.render("menu"));
+
+router.get("/productos", renderProductos);
 
 router.post("/productos/agregar", createProductos)
 
@@ -21,7 +23,7 @@ router.get("/productos/:id/delete", deleteProductos)
 router.get("/productos/:id/status", statusProductos)
 
 
-router.get("/", renderUsuario);
+router.get("/usuarios", renderUsuario);
 
 router.post("/usuarios/agregar", createUsuario)
 

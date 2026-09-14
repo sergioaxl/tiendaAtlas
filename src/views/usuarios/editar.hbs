@@ -1,0 +1,51 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card card-body p-4 rounded-0 bg-dark text-white">
+        <h4>Editar Usuario</h4>
+        
+        <!-- Apunta al ID dinámico del usuario que se está editando -->
+        <form action="/usuarios/{{usuarios._id}}/update" method="POST">
+          
+          <div class="mb-3">
+              <label for="nombre">Nombre</label>
+              <!-- El atributo 'value' inyecta la información actual de la base de datos -->
+              <input type="text" name="nombre" value="{{usuarios.nombre}}" class="form-control bg-dark text-white" required>
+          </div>
+          
+          <div class="mb-3">
+              <label for="apellidoPaterno">Apellido Paterno</label>
+              <input type="text" name="apellidoPaterno" value="{{usuarios.apellidoPaterno}}" class="form-control bg-dark text-white" required>
+          </div>
+          
+          <div class="mb-3">
+              <label for="apellidoMaterno">Apellido Materno</label>
+              <input type="text" name="apellidoMaterno" value="{{usuarios.apellidoMaterno}}" class="form-control bg-dark text-white" required>
+          </div>
+          
+          <div class="mb-3">
+              <label for="email">Correo Electrónico</label>
+              <input type="email" name="email" value="{{usuarios.email}}" class="form-control bg-dark text-white" required>
+          </div>
+          
+          <div class="mb-3">
+              <label for="telefono">Teléfono</label>
+              <input type="text" name="telefono" value="{{usuarios.telefono}}" class="form-control bg-dark text-white">
+          </div>
+          
+          <div class="mb-3">
+              <label for="rol">Rol (Actual: {{usuarios.rol}})</label>
+              <select name="rol" class="form-control bg-dark text-white">
+                  <option value="cliente">Cliente</option>
+                  <option value="administrador">Administrador</option>
+              </select>
+          </div>
+          
+          <button class="btn btn-info btn-sm mt-3">Actualizar Datos</button>
+          <a href="/usuarios" class="btn btn-secondary btn-sm mt-3 ms-2">Cancelar</a>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

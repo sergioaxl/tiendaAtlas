@@ -1,0 +1,38 @@
+{{#if usuarios}}
+<div class="table-responsive">
+    <table class="table table-elegant align-middle">
+        <thead>
+            <tr>
+                <th>N.</th>
+                <th>Nombre completo</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each usuarios}}
+            <tr>
+                <td>{{@index}}</td>
+                <!-- Aquí concatenamos el nombre y los dos apellidos -->
+                <td>{{nombre}} {{apellidoPaterno}} {{apellidoMaterno}}</td>
+                <td>{{email}}</td>
+                <td>{{telefono}}</td>
+                <td>{{rol}}</td>
+                <td class="d-flex gap-2">
+                    <a href="/usuarios/{{_id}}/update" class="btn btn-info btn-sm">Editar</a>
+                    <a href="/usuarios/{{_id}}/delete" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+{{else}}
+<div class="empty-state">
+    <img src="/icons/file.png" alt="">
+    <h1>No hay usuarios</h1>
+    <p class="mb-0">Los usuarios que registres aparecerán listados aquí.</p>
+</div>
+{{/if}}

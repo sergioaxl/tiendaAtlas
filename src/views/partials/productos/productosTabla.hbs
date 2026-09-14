@@ -1,39 +1,40 @@
 {{#if productos}}
-<table class="table table-bordered table-hover table-dark text-center align-middle">
-    <thead>
-        <tr>
-            <th>Num.</th>
-            <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Precio</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each productos}}
-        <tr>
-            <td>{{@index}}</td>
-            <td>{{nombre}}</td>
-            <td>{{descripcion}}</td>
-            <td>{{precio}}</td>
-            <td class="d-flex gap-4 justify-content-center">
-                {{#if opcion}}
-                    <a href="/productos/{{_id}}/status" class="btn btn-warning btn-sm ">No disponible</a>
-                {{else}}
-                    <a href="/productos/{{_id}}/status" class="btn btn-success btn-sm">Disponible</a>
-                {{/if}}
-                <a href="/productos/{{_id}}/update" class="btn btn-info btn-sm">Actualizar</a>
-                <a href="/productos/{{_id}}/delete" class="btn btn-danger btn-sm">Eliminar</a>
-            </td>
-        </tr>
-        {{/each}}
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table table-elegant text-center align-middle">
+        <thead>
+            <tr>
+                <th>Num.</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each productos}}
+            <tr>
+                <td>{{@index}}</td>
+                <td>{{nombre}}</td>
+                <td>{{descripcion}}</td>
+                <td>{{precio}}</td>
+                <td class="d-flex gap-2 justify-content-center align-items-center">
+                    {{#if opcion}}
+                        <a href="/productos/{{_id}}/status" class="btn btn-warning btn-sm">No disponible</a>
+                    {{else}}
+                        <a href="/productos/{{_id}}/status" class="btn btn-success btn-sm">Disponible</a>
+                    {{/if}}
+                    <a href="/productos/{{_id}}/update" class="btn btn-info btn-sm">Actualizar</a>
+                    <a href="/productos/{{_id}}/delete" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
 {{else}}
-<div class="h-100 d-flex align-items-center justify-content-center">
-    <div class="text-center text-white">
-        <h1>No hay productos</h1>
-        <img src="/icons/file.png" class="w-75">
-    </div>
+<div class="empty-state">
+    <img src="/icons/file.png" alt="">
+    <h1>No hay productos</h1>
+    <p class="mb-0">Los productos que agregues aparecerán listados aquí.</p>
 </div>
 {{/if}}

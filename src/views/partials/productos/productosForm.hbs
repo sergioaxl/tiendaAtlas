@@ -1,19 +1,18 @@
-<div class="card car-body p-4 rounded-0 bg-dark text-white">
-    <h4>Agregar Producto</h4>
+<div class="panel">
+    <h4 class="panel-title">Agregar producto</h4>
     <form action="/productos/agregar" method="POST">
-    <div>
-        <label for="nombre">Escribe el nombre</label>
-        <input type="text" name="nombre" placeholder="Name" id="nombre" class="form-control bg-dark text-white">
-    </div>
-    <div>
-        <label for="descripcion">Descripcion</label>
-        <textarea name="descripcion" cols="25" rows="5" placeholder="Descripcion" class="form-control bg-dark text-white"></textarea>
-    </div>
-    <div>
-        <label for="precio">Precio</label>
-        <input type="text" name="precio" placeholder="Price" id="precio" class="form-control bg-dark text-white">
-    </div>
-    <button class="btn btn-success btn-sm mt-2">Agregar</button>
-</form>
-
+        <div class="field">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" placeholder="Nombre del producto" id="nombre" class="form-control">
+        </div>
+        <div class="field">
+            <label for="descripcion">Descripción</label>
+            <textarea name="descripcion" id="descripcion" cols="25" rows="5" placeholder="Descripción" class="form-control"></textarea>
+        </div>
+        <div class="field">
+            <label for="precio">Precio</label>
+            <input type="text" name="precio" placeholder="0.00" id="precio" class="form-control">
+        </div>
+        <button class="btn btn-success btn-sm mt-2">Agregar</button>
+    </form>
 </div>
